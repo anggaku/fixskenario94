@@ -18,9 +18,9 @@ st.subheader("Masukkan Data Proyek")
 
 # Form input untuk data baru
 with st.form("input_form"):
-    namaproyek = st.selectbox("Nama Proyek", ['Gedung Apartemen', 'Gedung Asrama', 'Gedung Gudang', 'Gedung Hotel', 'Gedung Kampus', 'Gedung Kantor', 'Gedung Laboratorium', 'Gedung Olahraga', 'Gedung Pabrik', 'Gedung Parkir', 'Gedung Rumah Sakit', 'Gedung Rumah Susun', 'Gedung Sekolah', 'Gedung Wisata'])
+    namaproyek = st.selectbox("Nama Proyek", ['Gedung Apartemen'])
     waktu = st.number_input("Waktu (dalam hari)", min_value=1, step=1)
-    provinsi = st.selectbox("Provinsi", ["Bali", "Banten", "DKI Jakarta", "Jawa Barat", "Jawa Tengah", "Jawa Timur", "Kalimantan Timur", "Kepulauan Riau", "Nusa Tenggara Barat", "Papua", "Sulawesi Selatan"])
+    provinsi = st.selectbox("Provinsi", ["Bali", "Banten", "DKI Jakarta", "Jawa Barat", "Jawa Timur", "Kalimantan Timur", "Sulawesi Selatan"])
     tahun = st.number_input("Tahun", min_value=2000, max_value=2100, step=1)
     luas = st.number_input("Luas (m²)", min_value=0.0, step=1.0)
     subitem = st.number_input("Subitem", min_value=1, step=1)
