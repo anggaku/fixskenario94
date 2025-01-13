@@ -55,22 +55,22 @@ if submit:
     data_transformed[numerical_cols] = np.log1p(data_transformed[numerical_cols])
 
     # Muat encoder yang telah disimpan
-    encoder_namaproyek = load('../model/encoder_namaproyek.pkl')
-    encoder_provinsi = load('../model/encoder_provinsi.pkl')
+    encoder_namaproyek = load('model/encoder_namaproyek.pkl')
+    encoder_provinsi = load('model/encoder_provinsi.pkl')
 
     # Transformasi kolom kategorikal
     data_transformed['label_provinsi'] = encoder_provinsi.transform(data_transformed['provinsi'])
     data_transformed['label_namaproyek'] = encoder_namaproyek.transform(data_transformed['namaproyek'])
 
     # Muat scaler yang telah disimpan
-    scaler = load('../model/scaler.pkl')
+    scaler = load('model/scaler.pkl')
     data_transformed[numerical_cols] = scaler.transform(data_transformed[numerical_cols])
 
     # Hapus kolom yang tidak diperlukan lagi
     data_transformed.drop(columns=['lantai', 'namaproyek', 'provinsi'], inplace=True)
 
     # Muat model Voting Regressor yang telah disimpan
-    voting_regressor2 = load('../model/voting_regressor2_model.joblib')
+    voting_regressor2 = load('model/voting_regressor2_model.joblib')
 
     # Prediksi hasil menggunakan data baru
     y_pred_baru = voting_regressor2.predict(data_transformed)
